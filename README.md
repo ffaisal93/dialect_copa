@@ -109,6 +109,35 @@ source vnv/vnv_copa
 
 3. If you have access to the test data and want to use it instead of the validation data, follow these steps:
    - First, prepare the test data dataset-dict using the provided Python code snippet.
+        ```python
+        from datasets import load_dataset, Dataset, DatasetDict, load_from_disk
+        import pandas as pd
+        import os
+        import json
+        import datasets, random
+        
+        def make_all_test_data(DATADIR):
+            datasets={}
+            for f in os.listdir(DATADIR):
+                if str(f).startswith('copa'):
+                    for f1 in os.listdir(os.path.join(DATADIR,f)):
+                        if str(f1).startswith('test'):
+                            print(f,f1)
+                            with open(os.path.join(DATADIR,f,f1), encoding="utf-8") as f2:
+                                lines = f2.read().splitlines()
+                            line_dicts = [json.loads(line) for line in lines]
+                            datasets[str(f)]=line_dicts
+                            datasets[str(f)] = Dataset.from_pandas(pd.DataFrame(data=datasets[str(f)]))
+            datasets = DatasetDict(datasets)
+            # datasets=datasets.shuffle(seed=41)
+            return datasets
+            
+            
+        DATADIR='../data/dialect-copa-test'
+        test_data=make_all_test_data(DATADIR)
+        test_data.save_to_disk(os.path.join(DATADIR,'all_test'))
+        test_data=load_from_disk(os.path.join(DATADIR,'all_test'))
+        ```
    - Then, change the `TEST_FILE` variable in the `install.sh` file. Locate the line `TEST_FILE="data/all_val"` within the `if [[ "$task" = "train_predict_all_copa_encoder" || "$task" = "all" ]]; then` block and replace it with `TEST_FILE="data/dialect-copa-test/all_test"`.
 
 ### LORA Fine-tuning on Aya-101
