@@ -29,7 +29,6 @@ source vnv/vnv_copa
 
 ### Dataset Combinations
 1. Preprocess the training data to create various data combinations by running the following commands:
-
     ```bash
     cd scripts
     python scripts/dataset_preprocess.py
@@ -54,6 +53,43 @@ source vnv/vnv_copa
    | otrsl_{mix-sr-tor}                | orgl_omix_sr_tor |
    | otrsl_{mix-sl-cer}                | orgl_omix_sl_cer |
    | validation dataset                | all_val          |
+2. Additional python code to create the reverse-augmented data (already performed)
+   ```python
+   import pandas
+   import json
+   import os
+   
+   def get_reverse(x):
+    label_dict={0:'choice1',1:'choice2'}
+    premise=x[label_dict[x['label']]]
+    x[label_dict[x['label']]]=x['premise']
+    x['premise']=premise
+    if x['question']=='cause':
+        x['question']='effect'
+    else:
+        x['question']='cause'
+    return x
+
+    DATADIR="../data"
+    for f in os.listdir(DATADIR):
+            if str(f).startswith('copa') and str(f).endswith("hr-ckm"):
+                for f1 in os.listdir(os.path.join(DATADIR,f)):
+                    if str(f1).startswith('train.jsonl'):
+                        print(f,f1)
+                        with open(os.path.join(DATADIR,f,f1), encoding="utf-8") as f2:
+                            lines = f2.read().splitlines()
+                        line_dicts = [json.loads(line) for line in lines]
+                        print(os.listdir(os.path.join(DATADIR,f)))
+                        reverse_line_dicts=[get_reverse(line.copy()) for line in line_dicts]
+                        dest_file=os.path.join(DATADIR,f,'train-reverse.jsonl' )
+                        output_file = open(dest_file, 'w',encoding='utf-8')
+                        for dic in reverse_line_dicts:
+                            json.dump(dic, output_file,ensure_ascii=False) 
+                            output_file.write("\n")
+                        output_file.close()
+   ```
+
+   
 
 ### Fine-tuning and Evaluation on bcms-bertic
 1. We perform fine-tuning on the `bcms-bertic` model.
