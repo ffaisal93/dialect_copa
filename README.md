@@ -88,6 +88,12 @@ source vnv/vnv_copa
                             output_file.write("\n")
                         output_file.close()
    ```
+3. Translate using the ctranslate2 package (already performed, not needed):
+   ```bash
+   cd scripts
+   python translate.py
+   cd ..
+   ```
 
    
 
