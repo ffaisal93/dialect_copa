@@ -1,0 +1,13 @@
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torch==1.9.0+cu111
+conllu
+datasets >= 1.8.0
+accelerate
+sentencepiece != 0.1.92
+seqeval
+protobuf~=3.20.0
+tensorboardX
+tensorboard
+evaluate
+scipy
+scikit-learn
