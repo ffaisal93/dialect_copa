@@ -1,0 +1,87 @@
+Rule: m's at the end of words become n's
+Example:
+Ja sam = Ja san
+osam = osan
+s ženom = s ženon
+vidim = vidin
+
+Rule: đ becomes j
+Example:
+mlađi=>mlaji
+među=>meju
+
+Rule: The sounds ć and đ actually do not exist separately from č and dž
+
+Rule: genitive plural in the feminine and neuter takes a zero ending: 
+Example: žena = žen, sela = sel
+
+Rule: dative/instrumental plurals are also somewhat different.
+
+Rule: Masculine and neuter nouns can have an alternate ending.
+Example: it can be gradovima or gradoviman
+
+Rule: For feminine nouns, it's shortened. 
+ženama=>ženan
+
+Rule:-ao endings are shortened to just -a
+Example:
+išao je => iša je
+rekao sam => reka san
+
+Rule:-io endings change to -ija
+Example:
+govorio je => govorija je
+vidio sam => vidija san
+
+Rule:ča, aside from meaning "what" can also be used as a particle meaning "away" or "out".
+Example:
+gremo ča (let's get out of here)
+
+Rule: some of the third person plural forms can often be extended into longer -u ending forms.
+Example:
+govore -> govoru -> govoridu
+rade -> radu -> radidu
+pišu -> pišedu
+
+Rule: Infinitive is shortened .
+There is no I at the end.
+In some speeches there is neither T/Ć at the end
+Example: 
+bit =>bi
+pivat =>piva
+znat => zna
+plivat => pliva
+ronit => roni
+
+Rule: change lj=>j
+Example:
+zaljubiti se=>zajubit se
+ljubav =>jubav
+ljuska =>juska
+ljudi=>judi
+
+Rule: Change O => E in some cases
+Example:
+nekoga-nikega
+svakoga-svakega
+tomu-temu
+toga-tega
+bijeloga-bilega
+jednoga-jenega
+jednomu-jenemu
+
+Rule: In standard croatian third person plural has ending in some verbs E. In chakavian it is always U
+Examples:
+vide =>vidu
+hoće =>hoću
+stoje =>stoju
+stave =>stavu
+motre =>motru
+leže=>ležu
+
+Rule: Change H=>V
+Examples:
+kruh =>kruv
+kuhati =>kuvati
+suh =>suv
+gluh =>gluv[/b]
