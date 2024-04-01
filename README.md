@@ -7,6 +7,7 @@ To get started, clone this repository to your local machine using the following 
 
 ```
 git clone https://github.com/ffaisal93/dialect_copa.git
+cd dialect_copa
 ```
 
 ## Installation
@@ -23,7 +24,6 @@ This script will set up the required packages and libraries for the vnv_copa tas
 Before running any experiments, activate the virtual environment by navigating to the `dialect_copa` directory and sourcing the `vnv_copa` environment:
 
 ```bash
-cd dialect_copa
 source vnv/vnv_copa
 ```
 
